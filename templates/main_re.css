@@ -1,0 +1,129 @@
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('moose.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  /*background: #f0f0f0;*/
+  padding: 40px 10px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.heading{
+  display: flex;
+  justify-content: center;
+}
+
+.libre-bask{
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-bask-italic{
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.gradient-text {
+  background: radial-gradient(circle, #C0E4DB, #FEC5C1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  margin-top: 35vh;
+  margin-bottom: 30px;
+  
+}
+
+div button{
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, #C0E4DB, #FEC5C1);
+  width: 300px;
+  text-align: center;
+  height: 50px;
+  font-size: 25px;
+
+}
+
+.stepper-wrapper {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.step {
+  position: relative;
+  text-align: center;
+  flex: 1;
+}
+
+/* line between steps */
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: #d3d3d3;
+  transform: translateX(0%) translateY(-50%);
+  z-index: 0;
+}
+
+/* shorten line and keep gaps */
+.step:not(:last-child)::after {
+  width: calc(100% - 40px);
+  left: calc(50% + 20px);
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background: #d3d3d3;
+  border-radius: 50%;
+  z-index: 1;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+}
+
+.label {
+  margin-top: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+  color: #333;
+}
+
+.step.active .circle {
+  background: #1b761b;
+}
