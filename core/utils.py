@@ -14,12 +14,13 @@ load_dotenv(override=True)
 
 client_id = os.getenv('CLIENT_ID')
 client_secret = os.getenv('CLIENT_SECRET')
+redirect_uri= os.getenv('REDIRECT_URI')
                         
 
 def create_auth_url():
     return SpotifyOAuth(client_id= client_id,
             client_secret=client_secret,
-            redirect_uri=os.getenv('REDIRECT_URI'),
+            redirect_uri=redirect_uri,
             scope="user-library-read, playlist-read-collaborative")
 
 
