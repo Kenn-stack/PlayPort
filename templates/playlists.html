@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+  <!-- Example form with multiple checkbox rows -->
+  <form action="{% url 'api:ytm_login' %}" method="POST" class="selection-form">
+    {% csrf_token %}
+    <!-- Select All Checkbox Row -->
+    <label class="checkbox-row checkbox-row--select-all">
+      <div class="checkbox-row__select-all-icon"></div>
+      <div class="checkbox-row__content">
+        <span class="checkbox-row__title checkbox-row__title--select-all">Select All Items</span>
+      </div>
+      <div class="checkbox-row__checkbox-container">
+        <input type="checkbox" class="checkbox-row__checkbox" id="select-all">
+        <span class="checkbox-row__checkmark"></span>
+      </div>
+    </label>
+    
+    {% for playlist in playlists %}
+    <!-- Checkbox Row 1 -->
+    <label class="checkbox-row">
+      <img src= {{ playlist.image_url }} alt="Item thumbnail" class="checkbox-row__thumbnail">
+      <div class="checkbox-row__content">
+        <span class="checkbox-row__title">{{ playlist.name }}</span>
+        <span class="checkbox-row__number">{{ playlist.total_tracks }}</span>
+      </div>
+      <div class="checkbox-row__checkbox-container">
+        <input type="checkbox" class="checkbox-row__checkbox item-checkbox" name="items" value={{ playlist.id }}>
+        <span class="checkbox-row__checkmark"></span>
+      </div>
+    </label>
+    {% endfor %}
+    
+    <!-- Submit Button -->
+    <div class="form-submit-container">
+      <button type="submit" class="form-submit-button">
+        Submit Selection
+      </button>
+    </div>
+  </form>
+  
+</body>
+{% endblock %}

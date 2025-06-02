@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+  <div class="container">
+    <div class="libre-bask heading">
+      <h1>
+        <p>Your favorite <span class="libre-bask-italic">playlists.</span
+        ></p>
+        <p>Everywhere you <span class="libre-bask-italic">stream.</span>
+        </p>
+      </h1>
+    </div>
+   
+    <div class="button" id="parentdiv">
+      <button class="libre-bask"> 
+        <a href="{% url 'api:spot-login' %}"> Get started
+        </a>
+      </button>
+    </div>
+  </div>
+  
+</body>
+{% endblock %}
+
+
+

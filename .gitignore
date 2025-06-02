@@ -1,0 +1,6 @@
+# Environment variables
+.env
+.cache
+client_secret.json
+
+venv
